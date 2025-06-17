@@ -86,7 +86,7 @@ export default class Connection {
       // eslint-disable-next-line no-console
       console.log(`conn 🔌 joining loop #${this._loop}`)
 
-      const url = `ws${this._protocol}//${this._endpoint}/${this._loop}`
+      const url = `ws${this._protocol}//${this._endpoint}/g/${this._loop}`
       this.sock = new WebSocket(url)
       this.sock.binaryType = 'arraybuffer'
       this.info = info
@@ -102,7 +102,7 @@ export default class Connection {
       return
     }
 
-    const url = `http${this._protocol}//${this._endpoint}/${this._loop}`
+    const url = `http${this._protocol}//${this._endpoint}/i/${this._loop}`
 
     // eslint-disable-next-line no-console
     console.log(`conn 📡 fetching info for loop #${this._loop}`)
